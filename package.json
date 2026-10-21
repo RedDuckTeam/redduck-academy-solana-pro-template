@@ -6,6 +6,12 @@
   "scripts": {
     "build": "anchor build",
     "test": "anchor build && ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.test.ts",
+    "test:findTheRootOfTrust": "anchor build -p oracle_vault && ts-mocha -p ./tsconfig.json -t 1000000 tests/02-find-the-root-of-trust/*.test.ts",
+    "test:runItWithoutTheOperator": "anchor build -p operator_free && ts-mocha -p ./tsconfig.json -t 1000000 tests/03-run-it-without-the-operator/*.test.ts",
+    "test:rewardsWithoutALoop": "anchor build -p lazy_pool && ts-mocha -p ./tsconfig.json -t 1000000 tests/04-rewards-without-a-loop/*.test.ts",
+    "test:orderbookWithLocalChecks": "anchor build -p local_book && ts-mocha -p ./tsconfig.json -t 1000000 tests/05-orderbook-with-local-checks/*.test.ts",
+    "test:proposalAnyoneCanExecute": "anchor build -p open_multisig && ts-mocha -p ./tsconfig.json -t 1000000 tests/06-proposal-anyone-can-execute/*.test.ts",
+    "test:claimsInAnyOrder": "anchor build -p total_claims && ts-mocha -p ./tsconfig.json -t 1000000 tests/07-claims-in-any-order/*.test.ts",
     "test:valueThePosition": "anchor build -p position_value && ts-mocha -p ./tsconfig.json -t 1000000 tests/08-value-the-position/*.test.ts",
     "test:writeTheExit": "anchor build -p round_exit && ts-mocha -p ./tsconfig.json -t 1000000 tests/09-write-the-exit/*.test.ts",
     "deploy": "anchor deploy",
